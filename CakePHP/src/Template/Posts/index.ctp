@@ -1,3 +1,6 @@
+<?php
+    $this->assign('title', 'Blog Posts');
+?>
 <h1>Blog Posts</h1>
 
 <ul>
