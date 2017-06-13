@@ -41,6 +41,8 @@ class AppController extends Controller
     {
         parent::initialize();
 
+        $this->viewBuilder()->setLayout('my_layout');
+
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
 

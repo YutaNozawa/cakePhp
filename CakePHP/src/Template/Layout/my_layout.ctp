@@ -9,6 +9,7 @@
 
 </head>
 <body>
+    <?= $this->Element('my_header'); ?>
     <div class="container">
         <?= $this->fetch('content') ?>
     </div>

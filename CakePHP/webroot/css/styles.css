@@ -19,3 +19,13 @@ h1 {
 ul > li {
     padding: 3px 0;
 }
+
+ header {
+     text-align: center;
+     background: skyblue;
+     height: 30px;
+     line-height: 30px;
+     color: #fff;
+     font-size: 14px;
+     font-weight: 0px;
+ }

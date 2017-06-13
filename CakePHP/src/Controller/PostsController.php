@@ -15,7 +15,7 @@ class PostsController extends AppController
 {
     public function index()
     {
-        $this->viewBuilder()->setLayout('my_layout');
+
         $posts = TableRegistry::get('Posts')->find('all')
             //降順で並び替え
             ->order(['title' => 'DESC'])
