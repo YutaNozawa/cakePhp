@@ -15,9 +15,13 @@ class PostsController extends AppController
 {
     public function index()
     {
+        $this->viewBuilder()->setLayout('my_layout');
         $posts = TableRegistry::get('Posts')->find('all')
+            //降順で並び替え
             ->order(['title' => 'DESC'])
+            //件数の絞り込み
             ->limit(2)
+            //条件を付けて件数の絞り込み絞り込み
             ->where(['title like' => '%3']);
 
         $this->set(compact('posts'));
