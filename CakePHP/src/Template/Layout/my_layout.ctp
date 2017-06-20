@@ -10,6 +10,7 @@
 </head>
 <body>
     <?= $this->Element('my_header'); ?>
+    <?= $this->Flash->render() ?>
     <div class="container">
         <?= $this->fetch('content') ?>
     </div>

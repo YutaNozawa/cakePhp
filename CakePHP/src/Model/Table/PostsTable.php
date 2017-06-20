@@ -37,6 +37,10 @@ class PostsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->hasMany('Comments', [
+            'dependent' => true
+        ]);
     }
 
     /**
@@ -48,14 +52,16 @@ class PostsTable extends Table
     public function validationDefault(Validator $validator)
     {
         $validator
-            ->integer('id')
-            ->allowEmpty('id', 'create');
-
-        $validator
-            ->allowEmpty('title');
-
-        $validator
-            ->allowEmpty('body');
+            ->notEmpty('title')
+            ->requirePresence('title')
+            ->notEmpty('body')
+            ->requirePresence('body')
+            ->add('body', [
+                'length' => [
+                    'rule' => ['minLength', 10],
+                    'message' => '10文字以上入力をしてください'
+                ]
+            ]);
 
         return $validator;
     }
